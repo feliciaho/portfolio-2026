@@ -16,31 +16,31 @@ section
         margin: 3%
     span
         border: unset
-        font-size: clamp(1.1rem, 1.3vw, 2rem)
+        font-size: 24px
     p
-        font-size: clamp(1.3rem, 2vw, 2rem)
+        font-size: 24px
         text-align: start
         color: #ffc5e7
         &.time
             border: unset
             color: #ffff
-            font-size: clamp(1.1rem, 1.2vw, 2rem)
+            font-size: 20px
     label
         text-align: center
         color: #ffff
         padding: 5px 20px
-        font-size: 1rem
+        font-size: 20px
         border: 1px solid #ffff
         border-radius: 5px
-        font-weight: 1500
-        &.seemore
-            border: unset
-            color: #000000
-            background-color: #ffc5e7
+        font-weight: 400
+        +media-sp
+            padding: 4px 12px
+            font-size: 16px
         &.uiuxBut
             margin: 10px 0
             border: unset
             color: #000000
+            font-size: 24px
             background-color: #ffffff
             transition: .3s all
             &:hover
@@ -48,43 +48,62 @@ section
                 cursor: pointer
             &.uiuxBut4, &.uiuxBut5
                 display: none
+    label.seemore, button.seemore, a.seemore
+        border: unset
+        border-radius: 5px
+        color: #000000
+        background-color: #ffc5e7
+        padding: 5px 20px
+        font-size: 20px
+        font-weight: 400
+        font-family: inherit
+        cursor: pointer
+        transition: background-color 0.3s ease
+        +media-sp
+            padding: 4px 12px
+            font-size: 16px
+        &:hover
+            background-color: #ffffff
+    a.seemore
+        display: inline-block
+        text-decoration: none
 
     // project
-    .project
+    .project, .project-center
         width: 85%
-        display: flex
         border-bottom: 1px solid rgba(255, 255, 255, 0.5)
         color: #ffc5e7
-        justify-content: center
         padding: 10vh 0
-        flex-wrap: wrap
-        &:nth-child(odd)
-            flex-direction: row-reverse
         &:nth-last-child(1)
             border: none
         +media-sptb
             padding: 5vh 0
         a
             text-decoration: none
+    .project
+        display: flex
+        justify-content: center
+        flex-wrap: wrap
+        &:nth-child(odd)
+            flex-direction: row-reverse
         &_s1
             width: 65%
             border: none
             padding: 5vh 0
             +media-sptb
                 width: 85%
+
     // text
-    .secText
-        width: 40%
+    .secText, .secTextUiux, .secTextVisual
         display: flex
         flex-direction: column
         flex-wrap: wrap
         align-items: flex-start
         align-content: center
+        padding: 2vh 20px
+    .secText
+        width: 40%
         padding: 5vh 20px
-        +media-sptb
-            width: 100%
-            align-content: flex-start
-            padding: unset
         &_s1
             width: 100%
             text-align: start
@@ -99,25 +118,180 @@ section
                 justify-content: space-between
                 +media-sptb
                     flex-direction: column
-    .secTextUiux,.secTextVisual
+    .secTextUiux
         width: 30%
-        display: flex
-        flex-direction: column
-        flex-wrap: wrap
-        align-items: flex-start
-        align-content: center
-        padding: 2vh 20px
-        +media-sptb
-            width: 100%
-            align-content: flex-start
-            padding: unset
     .secTextVisual
         width: 40%
-        +media-sptb
+    +media-sptb
+        .secText, .secTextUiux, .secTextVisual
             width: 100%
             align-content: flex-start
             padding: unset
-            
+    .projectConcept
+        width: 100%
+        margin-top: 1rem
+        h2.projectTitle
+            color: #ffc5e7
+            font-size: 24px
+            font-weight: 400
+            display: flex
+            align-items: center
+            gap: 0.75rem
+            &::after
+                content: ""
+                width: 84px
+                border-top: 1px solid currentColor
+        p.projectTitle
+            color: #ffffff
+            font-size: 20px
+            font-weight: 400
+            line-height: 1.35
+    .projectInfo
+        display: flex
+        flex-direction: column
+        gap: 0.5rem
+        width: 100%
+        .projectInfoRow
+            display: grid
+            grid-template-columns: max-content minmax(0, 1fr)
+            align-items: baseline
+            gap: 1.5rem
+            width: 100%
+            h2, p
+                margin: 0
+                white-space: nowrap
+            h2
+                font-size: 20px
+                font-weight: 400
+                text-align: left
+            p
+                font-size: 24px
+                font-weight: 400
+                text-align: right
+            +media-sp
+                h2
+                    font-size: 16px
+                p
+                    font-size: 18px
+            .projectName
+                +media-sp
+                    white-space: normal
+                    overflow-wrap: anywhere
+            &.projectSkillsRow
+                align-items: start
+                .skillWrap
+                    justify-content: flex-start
+                    margin: 0
+    .seemoreWrap
+        width: 100%
+        margin-top: 1.5rem
+        display: flex
+        justify-content: flex-end
+
+    &.s5
+        .project
+            +media-custom-min(992px)
+                flex-direction: row
+                &:nth-child(odd)
+                    flex-direction: row
+                .secTextVisual
+                    box-sizing: border-box
+                    width: 55%
+                .bannerVisual
+                    width: 45%
+            +media-sptb
+                flex-direction: column
+                &:nth-child(odd)
+                    flex-direction: column
+                .bannerVisual
+                    width: 100%
+                    min-width: 0
+    &.s8
+        .project
+            +media-custom-min(992px)
+                flex-direction: row
+                &:nth-child(odd)
+                    flex-direction: row
+                .secTextVisual
+                    box-sizing: border-box
+                    width: 55%
+                .bannerVisual
+                    width: 45%
+            +media-sptb
+                flex-direction: column
+                &:nth-child(odd)
+                    flex-direction: column
+                .secTextVisual
+                    box-sizing: border-box
+                    width: 100%
+                    padding: unset
+                .bannerVisual
+                    width: 100%
+                    min-width: 0
+    &.s2
+        .project
+            flex-direction: column
+            &:nth-child(odd)
+                flex-direction: column
+            .secText, .secTextVisual
+                box-sizing: border-box
+                width: 100%
+                padding: unset
+            .banner, .bannerVisual
+                box-sizing: border-box
+                width: 100%
+                margin: 5vh 0
+                +media-sp
+                    margin: 3vh 0
+        .secText, .secTextVisual
+            align-content: flex-start
+    &.s2, &.s8, &.s9
+        .projectInfoRow
+            grid-template-columns: minmax(0, 25%) minmax(0, 1fr)
+            p
+                text-align: left
+            +media-sp
+                grid-template-columns: minmax(0, 20%) minmax(0, 1fr)
+    &.s2
+        .linkWrap
+            width: 100%
+            justify-content: flex-end
+        .githubIcon, .figmaIcon
+            box-sizing: border-box
+            border: unset
+            color: #000000
+            background-color: #ffc5e7
+            padding: 5px 20px
+            font-size: 20px
+            font-weight: 400
+            transition: background-color 0.3s ease
+            &:hover
+                background-color: #ffffff
+                transform: unset
+            img
+                width: 20px
+                height: 20px
+            +media-sp
+                padding: 4px 12px
+                font-size: 16px
+        .banner
+            cursor: default
+            border-radius: 0
+            .bannerImageFrame
+                overflow: hidden
+            img
+                display: block
+                width: 100%
+                border-radius: 0
+            .bannerImageFrame + .bannerImageFrame
+                margin-top: 40px
+            +media-sp
+                .bannerImageFrame + .bannerImageFrame
+                    margin-top: 24px
+            &:hover
+                img
+                    transform: unset
+
     +media-sptb
         width: 100%
         align-content: flex-start
@@ -125,6 +299,7 @@ section
     .skillWrap
         margin: 10px 0
         display: flex
+        align-items: flex-start
         gap: 10px
         flex-wrap: wrap
     .linkWrap
@@ -139,29 +314,26 @@ section
         border: 1px solid #ffff
         border-radius: 5px
         transition: .3s all
-        font-size: 1rem
-        font-weight: 1500
+        font-size: 20px
+        font-weight: 400
         &:hover
             transform: scale(1.1)
         img
-            width: 24px
-            height: 24px
-    // .figmaIcon
-    //     &:nth-of-type(1)
-    //         display: none
-
+            width: 20px
+            height: 20px
+        +media-sp
+            padding: 4px 12px
+            font-size: 16px
     // banner
     .banner
         position: relative
         overflow: hidden
         width: 45%
-        border-radius: 20px
         z-index: 2
         height: fit-content
         +media-sptb
             width: unset
             margin: 5vh 0
-            border-radius: 10px
         a
             z-index: 3
             cursor: pointer
@@ -182,7 +354,7 @@ section
             align-items: center
             opacity: 0
             transition: 0.3s linear
-            font-size: 24px
+            font-size: 20px
             pointer-events: none
         &:hover
             .mask
@@ -190,7 +362,7 @@ section
             img
                 transform: scale(1.1)
     .bannerUiux,.bannerVisual
-        width: 65%
+        width: 100%
         position: relative
         overflow: hidden
         z-index: 2

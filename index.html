@@ -10,13 +10,13 @@
   <meta name="robots" content="index, follow">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
   <title>Felicia Ho's Design Studio - 設計工作室</title>
-  <link rel="canonical" href="https://feliciaho.github.io/">
-  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="canonical" href="https://feliciaho.github.io/portfolio-2026/">
+  <link rel="sitemap" type="application/xml" href="sitemap.xml">
   <link rel="shortcut icon" href="images/heartIcon.ico">
   <meta property="og:title" content="Felicia Ho's Portfolio">
   <meta property="og:description" content="Felicia Ho's Design Studio - 個人設計工作室">
   <meta property="og:image" content="images/portfolioBanner.jpg" />
-  <meta property="og:url" content="https://feliciaho.github.io/">
+  <meta property="og:url" content="https://feliciaho.github.io/portfolio-2026/">
   <meta property="og:type" content="website">
   <script type="application/ld+json">
   {
@@ -24,7 +24,7 @@
     "@type": "Person",
     "name": "Felicia Ho",
     "jobTitle": "Designer",
-    "url": "https://feliciaho.github.io/",
+    "url": "https://feliciaho.github.io/portfolio-2026/",
     "sameAs": [
       "https://www.instagram.com/felicia_design_work/",
       "https://line.me/R/ti/p/~felicia27tw"
@@ -65,14 +65,15 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
         <div class="logo">
-          <a target="_blank" rel="noreferrer noopener" href="https://www.instagram.com/felicia_design_work/">
+          <a target="_blank" rel="noreferrer noopener" href="https://www.linkedin.com/in/felicia-ho/">
             <svg role="img" class="svgImg_nav" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
-              aria-label="Instagram logo">
+              aria-label="LinkedIn logo">
               <g fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="2.5" y="2.5" width="19" height="19" rx="4.5" />
-                <circle cx="12" cy="12" r="3.8" />
               </g>
-              <circle cx="17.5" cy="6.5" r="0.9" fill="white" />
+              <text x="50%" y="54%" text-anchor="middle" dominant-baseline="middle" fill="white"
+                font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="9.5"
+                letter-spacing="-0.6px">in</text>
             </svg>
           </a>
           <a class="" target="_blank" rel="noreferrer noopener" href="https://line.me/R/ti/p/~felicia27tw">
@@ -97,25 +98,25 @@
               <a class="nav-link" @click.prevent="scrollToTop('#s1')">Services</a>
             </li> -->
             <li class="nav-item">
-              <a class="nav-link" @click.prevent="scrollToTop('#s5')">Visual Design</a>
+              <a class="nav-link" @click.prevent="scrollToTop('#s5')">Banner Design</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" @click.prevent="scrollToTop('#s8')">Print Design</a>
+              <a class="nav-link" @click.prevent="scrollToTop('#s9')">AMZ Enhanced Imagery</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" @click.prevent="scrollToTop('#s2')">Official Website</a>
+              <a class="nav-link" @click.prevent="scrollToTop('#s8')">Print & Package Design</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" @click.prevent="scrollToTop('#s4')">UIUX</a>
+              <a class="nav-link" @click.prevent="scrollToTop('#s2')">UIUX Design</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" @click.prevent="scrollToTop('#s4')">UIUX Design</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" @click.prevent="scrollToTop('#s3')">Landing Page</a>
-            </li>
-            <!-- <li class="nav-item">
-              <a class="nav-link" @click.prevent="scrollToTop('#s7')">Product Design</a>
             </li> -->
             <!-- <li class="nav-item">
-              <a class="nav-link" @click.prevent="scrollToTop('#s6')">Marketing Graphics</a>
+              <a class="nav-link" @click.prevent="scrollToTop('#s7')">Product Design</a>
             </li> -->
           </ul>
         </div>
@@ -139,11 +140,11 @@
       <div class="project_s1" v-for="(i,key) in services" :key="i">
         <div class="secText_s1">
           <div class="secTitleWrap">
-            <p>{{i.type}}<span>{{i.name}}</span></p>
+            <p>{{i.type}}</p>
             <p class="time">{{ i.price }}</p>
           </div>
           <div class="skillWrap">
-            <label v-for="(skill,key) in i.skills" :key="i + 'skill'">{{ skill }}</label>
+            <label v-for="(skill,key) in i.company" :key="i + 'skill'">{{ skill }}</label>
           </div>
           <ul class="list">
             <li v-for="(i,key) in i.list" :key="i + 'list'">{{ i }}</li>
@@ -151,16 +152,24 @@
         </div>
     </section> -->
     <section class="s5" id="s5">
-      <h1 class="secTitle">Visual Design</h1>
-      <div class="project" v-for="(i,key) in visualDesign" :key="i">
+      <h1 class="secTitle">Banner Design</h1>
+      <div class="project" v-for="(i,key) in bannerDesign" :key="i">
         <!-- text -->
         <div class="secTextVisual">
-          <h2 class="projectTitle">Project {{key+1}}</h2>
-          <p>{{i.chName}}<br><span>{{i.name}}</span></p>
-          <div class="skillWrap">
-            <label v-for="(skill,key) in i.skills" :key="i + 'skill'">{{ skill }}</label>
+          <div class="projectInfo">
+            <div class="projectInfoRow">
+              <h2 class="projectTitle">Project {{key+1}}</h2>
+              <p class="projectName">{{i.name}}</p>
+            </div>
+            <div class="projectInfoRow">
+              <h2 class="projectTitle">Company</h2>
+              <p>{{i.company}}</p>
+            </div>
           </div>
-          <!-- icon -->
+          <div class="projectConcept" v-if="i.concept">
+            <h2 class="projectTitle">Concept</h2>
+            <p class="projectTitle">{{i.concept}}</p>
+          </div>
         </div>
         <!-- banner -->
         <div class="bannerVisual">
@@ -178,15 +187,48 @@
         </div>
       </div>
     </section>
+    <section class="s9" id="s9">
+      <h1 class="secTitle">Amazon Enhanced Imagery</h1>
+      <div class="project-center" v-for="(i,key) in amzDesign" :key="i">
+        <div class="projectInfo">
+          <div class="projectInfoRow">
+            <h2 class="projectTitle">Project {{key+1}}</h2>
+            <p class="projectName">{{i.name}}</p>
+          </div>
+          <div class="projectInfoRow">
+            <h2 class="projectTitle">Company</h2>
+            <p>{{i.company}}</p>
+          </div>
+        </div>
+        <!-- Swiper -->
+        <div class="swiper mySwiper2">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" v-for="(img, key) in i.img" :key="key">
+              <img :src="img" :alt="i.name + ' AMZ enhncaed Imagery ' + (key+1)" />
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
     <section class="s8" id="s8">
-      <h1 class="secTitle">Print Design</h1>
+      <h1 class="secTitle">Print & Package Design</h1>
       <div class="project" v-for="(i,key) in printDesign" :key="i">
         <!-- text -->
         <div class="secTextVisual">
-          <h2 class="projectTitle">Project {{key+1}}</h2>
-          <p>{{i.chName}}<br><span>{{i.name}}</span></p>
-          <div class="skillWrap">
-            <label v-for="(skill,key) in i.skills" :key="i + 'skill'">{{ skill }}</label>
+          <div class="projectInfo">
+            <div class="projectInfoRow">
+              <h2 class="projectTitle">Project {{key+1}}</h2>
+              <p class="projectName">{{i.name}}</p>
+            </div>
+            <div class="projectInfoRow">
+              <h2 class="projectTitle">Company</h2>
+              <p>{{i.company}}</p>
+            </div>
+          </div>
+          <div class="projectConcept" v-if="i.concept">
+            <h2 class="projectTitle">Concept</h2>
+            <p class="projectTitle">{{i.concept}}</p>
           </div>
           <!-- icon -->
         </div>
@@ -207,17 +249,36 @@
       </div>
     </section>
     <section class="s2" id="s2">
-      <h1 class="secTitle">Official Website</h1>
+      <h1 class="secTitle">UIUX Design</h1>
       <div class="project" v-for="(i,key) in officialWebsites" :key="i">
         <!-- text -->
         <div class="secText">
-          <p>{{i.chName}}<br><span>{{i.name}}</span></p>
-          <div class="skillWrap">
-            <label v-for="(skill,key) in i.skills" :key="i + 'skill'">{{ skill }}</label>
+          <div class="projectInfo">
+            <div class="projectInfoRow">
+              <h2 class="projectTitle">Project {{key+1}}</h2>
+              <p class="projectName">{{i.name}}</p>
+            </div>
+            <div class="projectInfoRow">
+              <h2 class="projectTitle">Comapny</h2>
+              <p>{{i.company}}</p>
+            </div>
+            <div class="projectInfoRow projectSkillsRow">
+              <h2 class="projectTitle">Skills</h2>
+              <div class="skillWrap">
+                <label v-for="(skill,key) in i.skill" :key="i + 'skill'">{{ skill }}</label>
+              </div>
+            </div>
           </div>
+          <div class="projectConcept" v-if="i.concept">
+            <h2 class="projectTitle">Concept</h2>
+            <p class="projectTitle">{{i.concept}}</p>
+          </div>
+
           <!-- icon -->
           <div class="linkWrap">
-            <a target="_blank" rel="noreferrer noopener" :href=i.githubUrl>
+            <a class="seemore" v-if="i.seeMore === true" :href="i.webUrl" target="_blank" rel="noreferrer noopener">See
+              More</a>
+            <a v-if="i.github === true" target="_blank" rel="noreferrer noopener" :href="i.githubUrl">
               <div class="githubIcon">Github
                 <svg role="img" class="svgImg_sec" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -234,29 +295,24 @@
           </div>
         </div>
         <!-- banner -->
-        <div class="banner"><a :href=i.webUrl target="_blank">
-            <img :src=i.img :alt="i.name + ' 專案橫幅'"></a>
-          <div class="mask">
-            <label class="seemore">see more</label>
+        <div class="banner">
+          <div class="bannerImageFrame" v-for="(img, imageKey) in i.img" :key="imageKey">
+            <img :src="img" :alt="i.name + ' 專案圖片 ' + (imageKey+1)">
           </div>
         </div>
       </div>
     </section>
-    <section class="s4" id="s4">
-      <h1 class="secTitle">UIUX</h1>
+    <!-- <section class="s4" id="s4">
+      <h1 class="secTitle">UIUX Design</h1>
       <div class="project" v-for="(i,key) in websiteDesign" :key="i">
-        <!-- text -->
         <div class="secTextUiux">
           <h2 class="projectTitle">Project {{key+1}}</h2>
-          <p>{{i.chName}}<br><span>{{i.name}}</span></p>
-          <!-- icon -->
+          <p>{{i.name}}<br></p>
           <a target="_blank" :href=i.webUrl>
-            <label :class="`uiuxBut uiuxBut${key+1}`">see more</label>
+            <label :class="`uiuxBut uiuxBut${key+1}`">See More</label>
           </a>
         </div>
-        <!-- banner -->
         <div class="bannerUiux">
-          <!-- Swiper -->
           <div class="swiper mySwiper1">
             <div class="swiper-wrapper">
               <div class="swiper-slide" v-for="(img, key) in i.img" :key="key">
@@ -273,13 +329,11 @@
     <section class="s3" id="s3">
       <h1 class="secTitle">Landing Page</h1>
       <div class="project" v-for="(i,key) in landingPage" :key="i">
-        <!-- text -->
         <div class="secText">
-          <p>{{i.chName}}<br><span>{{i.name}}</span></p>
+          <p>{{i.name}}<br></p>
           <div class="skillWrap">
-            <label v-for="(skill,key) in i.skills" :key="i + 'skill'">{{ skill }}</label>
+            <label v-for="(skill,key) in i.company" :key="i + 'skill'">{{ skill }}</label>
           </div>
-          <!-- icon -->
           <a target="_blank" rel="noreferrer noopener" :href=i.githubUrl>
             <div class="githubIcon">Github
               <svg role="img" class="svgImg_sec" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -290,22 +344,21 @@
             </div>
           </a>
         </div>
-        <!-- banner -->
         <div class="banner"><a :href=i.webUrl target="_blank">
             <img :src=i.img :alt="i.name + ' 專案橫幅'"></a>
           <div class="mask">
-            <label class="seemore">see more</label>
+            <label class="seemore">See More</label>
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
     <!-- <section class="s7" id="s7">
       <h1 class="secTitle">Product Design</h1>
       <div class="project" v-for="(i,key) in industrialDesign" :key="i">
         <div class="secTextVisual">
-          <p>{{i.chName}}<br><span>{{i.name}}</span></p>
+          <p>{{i.name}}<br></p>
           <div class="skillWrap">
-            <label v-for="(skill,key) in i.skills" :key="i + 'skill'">{{ skill }}</label>
+            <label v-for="(skill,key) in i.company" :key="i + 'skill'">{{ skill }}</label>
           </div>
         </div>
         <div class="bannerVisual">
@@ -337,14 +390,15 @@
     <footer>
       <ul class="footerImg">
         <li>
-          <a target="_blank" rel="noreferrer noopener" href="https://www.instagram.com/felicia_design_work/">
+          <a target="_blank" rel="noreferrer noopener" href="https://www.linkedin.com">
             <svg role="img" class="svgImg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
-              aria-label="Instagram logo">
+              aria-label="LinkedIn logo">
               <g fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="2.5" y="2.5" width="19" height="19" rx="4.5" />
-                <circle cx="12" cy="12" r="3.8" />
               </g>
-              <circle cx="17.5" cy="6.5" r="0.9" fill="white" />
+              <text x="50%" y="52%" text-anchor="middle" dominant-baseline="middle" fill="white"
+                font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="8.5"
+                letter-spacing="-0.5px">in</text>
             </svg>
           </a>
         </li>
@@ -374,4 +428,5 @@
   <script src="js/animation.js"></script>
   <script src="js/particle.js"></script>
 </body>
+
 </html>

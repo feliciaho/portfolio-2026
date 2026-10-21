@@ -80,6 +80,7 @@ button, a {
 img {
   max-width: 100%;
   height: auto;
+  border-radius: 0;
 }
 
 body {
@@ -166,8 +167,7 @@ body header .scrollDown div {
 body header .scrollDown div p {
   position: relative;
   font-size: 1.5rem;
-  -webkit-background-clip: text;
-          background-clip: text;
+  background-clip: text;
   animation: scrollAni 1s ease-out infinite;
   text-fill-color: transparent;
 }
@@ -206,36 +206,38 @@ section h1.secTitle {
 }
 section span {
   border: unset;
-  font-size: clamp(1.1rem, 1.3vw, 2rem);
+  font-size: 24px;
 }
 section p {
-  font-size: clamp(1.3rem, 2vw, 2rem);
+  font-size: 24px;
   text-align: start;
   color: #ffc5e7;
 }
 section p.time {
   border: unset;
   color: white;
-  font-size: clamp(1.1rem, 1.2vw, 2rem);
+  font-size: 20px;
 }
 section label {
   text-align: center;
   color: white;
   padding: 5px 20px;
-  font-size: 1rem;
+  font-size: 20px;
   border: 1px solid white;
   border-radius: 5px;
-  font-weight: 1500;
+  font-weight: 400;
 }
-section label.seemore {
-  border: unset;
-  color: #000000;
-  background-color: #ffc5e7;
+@media only screen and (max-width: 767px) {
+  section label {
+    padding: 4px 12px;
+    font-size: 16px;
+  }
 }
 section label.uiuxBut {
   margin: 10px 0;
   border: unset;
   color: #000000;
+  font-size: 24px;
   background-color: #ffffff;
   transition: 0.3s all;
 }
@@ -246,28 +248,55 @@ section label.uiuxBut:hover {
 section label.uiuxBut.uiuxBut4, section label.uiuxBut.uiuxBut5 {
   display: none;
 }
-section .project {
+section label.seemore, section button.seemore, section a.seemore {
+  border: unset;
+  border-radius: 5px;
+  color: #000000;
+  background-color: #ffc5e7;
+  padding: 5px 20px;
+  font-size: 20px;
+  font-weight: 400;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+@media only screen and (max-width: 767px) {
+  section label.seemore, section button.seemore, section a.seemore {
+    padding: 4px 12px;
+    font-size: 16px;
+  }
+}
+section label.seemore:hover, section button.seemore:hover, section a.seemore:hover {
+  background-color: #ffffff;
+}
+section a.seemore {
+  display: inline-block;
+  text-decoration: none;
+}
+section .project, section .project-center {
   width: 85%;
-  display: flex;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   color: #ffc5e7;
-  justify-content: center;
   padding: 10vh 0;
+}
+section .project:nth-last-child(1), section .project-center:nth-last-child(1) {
+  border: none;
+}
+@media only screen and (max-width: 991px) {
+  section .project, section .project-center {
+    padding: 5vh 0;
+  }
+}
+section .project a, section .project-center a {
+  text-decoration: none;
+}
+section .project {
+  display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
 section .project:nth-child(odd) {
   flex-direction: row-reverse;
-}
-section .project:nth-last-child(1) {
-  border: none;
-}
-@media only screen and (max-width: 991px) {
-  section .project {
-    padding: 5vh 0;
-  }
-}
-section .project a {
-  text-decoration: none;
 }
 section .project_s1 {
   width: 65%;
@@ -279,21 +308,17 @@ section .project_s1 {
     width: 85%;
   }
 }
-section .secText {
-  width: 40%;
+section .secText, section .secTextUiux, section .secTextVisual {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-items: flex-start;
   align-content: center;
-  padding: 5vh 20px;
+  padding: 2vh 20px;
 }
-@media only screen and (max-width: 991px) {
-  section .secText {
-    width: 100%;
-    align-content: flex-start;
-    padding: unset;
-  }
+section .secText {
+  width: 40%;
+  padding: 5vh 20px;
 }
 section .secText_s1 {
   width: 100%;
@@ -314,31 +339,240 @@ section .secText_s1 .secTitleWrap {
     flex-direction: column;
   }
 }
-section .secTextUiux, section .secTextVisual {
+section .secTextUiux {
   width: 30%;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  align-content: center;
-  padding: 2vh 20px;
-}
-@media only screen and (max-width: 991px) {
-  section .secTextUiux, section .secTextVisual {
-    width: 100%;
-    align-content: flex-start;
-    padding: unset;
-  }
 }
 section .secTextVisual {
   width: 40%;
 }
 @media only screen and (max-width: 991px) {
-  section .secTextVisual {
+  section .secText, section .secTextUiux, section .secTextVisual {
     width: 100%;
     align-content: flex-start;
     padding: unset;
   }
+}
+section .projectConcept {
+  width: 100%;
+  margin-top: 1rem;
+}
+section .projectConcept h2.projectTitle {
+  color: #ffc5e7;
+  font-size: 24px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+section .projectConcept h2.projectTitle::after {
+  content: "";
+  width: 84px;
+  border-top: 1px solid currentColor;
+}
+section .projectConcept p.projectTitle {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.35;
+}
+section .projectInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+section .projectInfo .projectInfoRow {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  align-items: baseline;
+  gap: 1.5rem;
+  width: 100%;
+}
+section .projectInfo .projectInfoRow h2, section .projectInfo .projectInfoRow p {
+  margin: 0;
+  white-space: nowrap;
+}
+section .projectInfo .projectInfoRow h2 {
+  font-size: 20px;
+  font-weight: 400;
+  text-align: left;
+}
+section .projectInfo .projectInfoRow p {
+  font-size: 24px;
+  font-weight: 400;
+  text-align: right;
+}
+@media only screen and (max-width: 767px) {
+  section .projectInfo .projectInfoRow h2 {
+    font-size: 16px;
+  }
+  section .projectInfo .projectInfoRow p {
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  section .projectInfo .projectInfoRow .projectName {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+}
+section .projectInfo .projectInfoRow.projectSkillsRow {
+  align-items: start;
+}
+section .projectInfo .projectInfoRow.projectSkillsRow .skillWrap {
+  justify-content: flex-start;
+  margin: 0;
+}
+section .seemoreWrap {
+  width: 100%;
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+}
+@media only screen and (min-width: 992px) {
+  section.s5 .project {
+    flex-direction: row;
+  }
+  section.s5 .project:nth-child(odd) {
+    flex-direction: row;
+  }
+  section.s5 .project .secTextVisual {
+    box-sizing: border-box;
+    width: 55%;
+  }
+  section.s5 .project .bannerVisual {
+    width: 45%;
+  }
+}
+@media only screen and (max-width: 991px) {
+  section.s5 .project {
+    flex-direction: column;
+  }
+  section.s5 .project:nth-child(odd) {
+    flex-direction: column;
+  }
+  section.s5 .project .bannerVisual {
+    width: 100%;
+    min-width: 0;
+  }
+}
+@media only screen and (min-width: 992px) {
+  section.s8 .project {
+    flex-direction: row;
+  }
+  section.s8 .project:nth-child(odd) {
+    flex-direction: row;
+  }
+  section.s8 .project .secTextVisual {
+    box-sizing: border-box;
+    width: 55%;
+  }
+  section.s8 .project .bannerVisual {
+    width: 45%;
+  }
+}
+@media only screen and (max-width: 991px) {
+  section.s8 .project {
+    flex-direction: column;
+  }
+  section.s8 .project:nth-child(odd) {
+    flex-direction: column;
+  }
+  section.s8 .project .secTextVisual {
+    box-sizing: border-box;
+    width: 100%;
+    padding: unset;
+  }
+  section.s8 .project .bannerVisual {
+    width: 100%;
+    min-width: 0;
+  }
+}
+section.s2 .project {
+  flex-direction: column;
+}
+section.s2 .project:nth-child(odd) {
+  flex-direction: column;
+}
+section.s2 .project .secText, section.s2 .project .secTextVisual {
+  box-sizing: border-box;
+  width: 100%;
+  padding: unset;
+}
+section.s2 .project .banner, section.s2 .project .bannerVisual {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 5vh 0;
+}
+@media only screen and (max-width: 767px) {
+  section.s2 .project .banner, section.s2 .project .bannerVisual {
+    margin: 3vh 0;
+  }
+}
+section.s2 .secText, section.s2 .secTextVisual {
+  align-content: flex-start;
+}
+section.s2 .projectInfoRow, section.s8 .projectInfoRow, section.s9 .projectInfoRow {
+  grid-template-columns: minmax(0, 25%) minmax(0, 1fr);
+}
+section.s2 .projectInfoRow p, section.s8 .projectInfoRow p, section.s9 .projectInfoRow p {
+  text-align: left;
+}
+@media only screen and (max-width: 767px) {
+  section.s2 .projectInfoRow, section.s8 .projectInfoRow, section.s9 .projectInfoRow {
+    grid-template-columns: minmax(0, 20%) minmax(0, 1fr);
+  }
+}
+section.s2 .linkWrap {
+  width: 100%;
+  justify-content: flex-end;
+}
+section.s2 .githubIcon, section.s2 .figmaIcon {
+  box-sizing: border-box;
+  border: unset;
+  color: #000000;
+  background-color: #ffc5e7;
+  padding: 5px 20px;
+  font-size: 20px;
+  font-weight: 400;
+  transition: background-color 0.3s ease;
+}
+section.s2 .githubIcon:hover, section.s2 .figmaIcon:hover {
+  background-color: #ffffff;
+  transform: unset;
+}
+section.s2 .githubIcon img, section.s2 .figmaIcon img {
+  width: 20px;
+  height: 20px;
+}
+@media only screen and (max-width: 767px) {
+  section.s2 .githubIcon, section.s2 .figmaIcon {
+    padding: 4px 12px;
+    font-size: 16px;
+  }
+}
+section.s2 .banner {
+  cursor: default;
+  border-radius: 0;
+}
+section.s2 .banner .bannerImageFrame {
+  overflow: hidden;
+}
+section.s2 .banner img {
+  display: block;
+  width: 100%;
+  border-radius: 0;
+}
+section.s2 .banner .bannerImageFrame + .bannerImageFrame {
+  margin-top: 40px;
+}
+@media only screen and (max-width: 767px) {
+  section.s2 .banner .bannerImageFrame + .bannerImageFrame {
+    margin-top: 24px;
+  }
+}
+section.s2 .banner:hover img {
+  transform: unset;
 }
 @media only screen and (max-width: 991px) {
   section {
@@ -350,6 +584,7 @@ section .secTextVisual {
 section .skillWrap {
   margin: 10px 0;
   display: flex;
+  align-items: flex-start;
   gap: 10px;
   flex-wrap: wrap;
 }
@@ -366,30 +601,33 @@ section .githubIcon, section .figmaIcon {
   border: 1px solid white;
   border-radius: 5px;
   transition: 0.3s all;
-  font-size: 1rem;
-  font-weight: 1500;
+  font-size: 20px;
+  font-weight: 400;
 }
 section .githubIcon:hover, section .figmaIcon:hover {
   transform: scale(1.1);
 }
 section .githubIcon img, section .figmaIcon img {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
+}
+@media only screen and (max-width: 767px) {
+  section .githubIcon, section .figmaIcon {
+    padding: 4px 12px;
+    font-size: 16px;
+  }
 }
 section .banner {
   position: relative;
   overflow: hidden;
   width: 45%;
-  border-radius: 20px;
   z-index: 2;
-  height: -moz-fit-content;
   height: fit-content;
 }
 @media only screen and (max-width: 991px) {
   section .banner {
     width: unset;
     margin: 5vh 0;
-    border-radius: 10px;
   }
 }
 section .banner a {
@@ -398,8 +636,7 @@ section .banner a {
 }
 section .banner a img {
   transition: 0.2s linear;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   width: 100%;
 }
 section .banner .mask {
@@ -415,7 +652,7 @@ section .banner .mask {
   align-items: center;
   opacity: 0;
   transition: 0.3s linear;
-  font-size: 24px;
+  font-size: 20px;
   pointer-events: none;
 }
 section .banner:hover .mask {
@@ -425,11 +662,10 @@ section .banner:hover img {
   transform: scale(1.1);
 }
 section .bannerUiux, section .bannerVisual {
-  width: 65%;
+  width: 100%;
   position: relative;
   overflow: hidden;
   z-index: 2;
-  height: -moz-fit-content;
   height: fit-content;
 }
 @media only screen and (max-width: 991px) {
@@ -569,12 +805,6 @@ footer .footerImg {
 .s4 .swiper-slide img {
   display: inline-block;
   width: 100%;
-  border-radius: 20px;
-}
-@media only screen and (max-width: 991px) {
-  .s4 .swiper-slide img {
-    border-radius: 10px;
-  }
 }
 .s4 .swiper .swiper-button-prev, .s4 .swiper .swiper-button-next {
   top: 50%;
@@ -589,7 +819,7 @@ footer .footerImg {
   border: 2px solid #ffffff;
 }
 .s4 .swiper .swiper-button-prev:after, .s4 .swiper .swiper-button-next:after {
-  font-size: 25px;
+  font-size: 24px;
 }
 .s4 .swiper .swiper-button-prev:hover, .s4 .swiper .swiper-button-prev:focus, .s4 .swiper .swiper-button-prev.active, .s4 .swiper .swiper-button-next:hover, .s4 .swiper .swiper-button-next:focus, .s4 .swiper .swiper-button-next.active {
   opacity: 1;
@@ -614,7 +844,6 @@ footer .footerImg {
 .s5 .swiper-slide, .s7 .swiper-slide, .s8 .swiper-slide {
   background-position: center;
   background-size: cover;
-  width: 600px;
   height: auto;
   text-align: center;
   display: flex;
@@ -623,12 +852,6 @@ footer .footerImg {
 .s5 .swiper-slide img, .s7 .swiper-slide img, .s8 .swiper-slide img {
   display: inline-block;
   width: 100%;
-  border-radius: 20px;
-}
-@media only screen and (max-width: 991px) {
-  .s5 .swiper-slide img, .s7 .swiper-slide img, .s8 .swiper-slide img {
-    border-radius: 10px;
-  }
 }
 .s5 .swiper .swiper-button-prev, .s5 .swiper .swiper-button-next, .s7 .swiper .swiper-button-prev, .s7 .swiper .swiper-button-next, .s8 .swiper .swiper-button-prev, .s8 .swiper .swiper-button-next {
   top: 50%;
@@ -643,7 +866,7 @@ footer .footerImg {
   border: 2px solid #ffffff;
 }
 .s5 .swiper .swiper-button-prev:after, .s5 .swiper .swiper-button-next:after, .s7 .swiper .swiper-button-prev:after, .s7 .swiper .swiper-button-next:after, .s8 .swiper .swiper-button-prev:after, .s8 .swiper .swiper-button-next:after {
-  font-size: 25px;
+  font-size: 24px;
 }
 .s5 .swiper .swiper-button-prev:hover, .s5 .swiper .swiper-button-prev:focus, .s5 .swiper .swiper-button-prev.active, .s5 .swiper .swiper-button-next:hover, .s5 .swiper .swiper-button-next:focus, .s5 .swiper .swiper-button-next.active, .s7 .swiper .swiper-button-prev:hover, .s7 .swiper .swiper-button-prev:focus, .s7 .swiper .swiper-button-prev.active, .s7 .swiper .swiper-button-next:hover, .s7 .swiper .swiper-button-next:focus, .s7 .swiper .swiper-button-next.active, .s8 .swiper .swiper-button-prev:hover, .s8 .swiper .swiper-button-prev:focus, .s8 .swiper .swiper-button-prev.active, .s8 .swiper .swiper-button-next:hover, .s8 .swiper .swiper-button-next:focus, .s8 .swiper .swiper-button-next.active {
   opacity: 1;
@@ -654,31 +877,21 @@ footer .footerImg {
   }
 }
 
-.s6 .swiper {
+.s9 .swiper {
   overflow-x: hidden;
   width: 100%;
   padding-top: 50px;
   padding-bottom: 50px;
 }
-.s6 .swiper-slide {
+.s9 .swiper-slide {
   background-position: center;
   background-size: cover;
-  width: 600px;
+  width: auto;
   height: auto;
   text-align: center;
-  margin: auto -20px;
+  margin: 0;
 }
-@media only screen and (max-width: 767px) {
-  .s6 .swiper-slide {
-    width: 500px;
-  }
-}
-@media only screen and (max-width: 480px) {
-  .s6 .swiper-slide {
-    width: 280px;
-  }
-}
-.s6 .swiper-slide img {
+.s9 .swiper-slide img {
   display: inline-block;
   width: 100%;
 }
@@ -770,4 +983,6 @@ footer .footerImg {
     transform-origin: 50% 0%;
     transform: scaleY(0);
   }
-}/*# sourceMappingURL=app.css.map */
+}
+
+/*# sourceMappingURL=app.css.map */
