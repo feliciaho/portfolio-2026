@@ -43,17 +43,26 @@ const App = {
             "images/galleon_banner/04.jpg",
           ],
           company: "Corsair",
-          concept: "Modern & Futuristic",
+          concept: [
+            "Campaign Goal: Announce a special promotional bundle where purchasing the keyboard grants instant access to free, custom-tailored game profiles.",
+            "Design Strategy: Created three immersive thematic directions inspired by Cyberpunk, Arc Raiders, and Diablo, leveraging AI generation to build custom background environments unique to each universe.",
+            "Visual Execution: Arranged dynamic, floating profile icons around the keyboard to instantly hook fans of specific titles and highlight the product's versatile ecosystem.",
+            "Impact: Boosted user engagement and drove the CTR to 2.13% for the Galleon 100 SD campaign by designing customized, multi-style banners and leveraging AI tools to target diverse gaming audiences."
+          ],
         },
         {
           name: "NIGHTSWORD v2 WIRELESS SD",
           img: [
-            "images/nightsword_banner/01.jpg",
             "images/nightsword_banner/02.jpg",
             "images/nightsword_banner/03.jpg",
+            "images/nightsword_banner/01.jpg",
           ],
           company: "Corsair",
-          concept: "Modern & Futuristic",
+          concept: [
+            "Campaign Goal: Align with the headline \"SPAWN INFINITE COMMANDS\" to highlight unlimited macro and profile customization.",
+            "Design Strategy: Highlight the NIGHTSWORD v2 WIRELESS SD as the pioneer gaming mouse integrated with Virtual Stream Deck functionality.",
+            "Visual Execution: Densely layer the background with Virtual Stream Deck profiles to visually reinforce the mouse's powerful multitasking and control capabilities."
+          ],
         },
         // {
         //   name: "HS80 v2 MAX WIRELSS",
@@ -73,7 +82,12 @@ const App = {
             "images/gumayusi_banner/01.jpg",
           ],
           company: "Corsair",
-          concept: "Modern & Futuristic",
+          concept: [
+            "Campaign Goal: Partner with renowned esports star Gumayusi to launch an exclusive co-branded collection, building massive star power and community hype.",
+            "Design Strategy: Position Gumayusi as the dominant visual anchor—intentionally scaling him larger than the products—to instantly grab fans' attention and drive emotional resonance.",
+            "Visual Execution: Structure the two-part banner series logically: the first highlights his star power with a signature aesthetic, while the second seamlessly transitions to showcasing the full product ecosystem under a cohesive starry gold theme.",
+            "Brand Impact: Delivered a high-converting, fan-centric visual campaign that successfully maximized audience engagement and brand desire."
+          ],
         },
         {
           name: "MapleStory",
@@ -82,7 +96,12 @@ const App = {
             "images/mapleStory/02.jpg",
           ],
           company: "Gamania",
-          concept: "Modern & Futuristic",
+          concept: [
+            "Campaign Goal: Drive daily check-ins and user engagement by offering fans personalized player certificates and a chance to win exclusive raffle prizes.",
+            "Design Strategy: Developed two distinct visual directions to maximize appeal—a nostalgic, vintage paper style for official certification and a vibrant, playful universe for community celebration.",
+            "Visual Execution: Designed the first banner as a textured \"Classic Certificate\" notice and the second around MapleStory’s iconic character Pink Bean to create a fun, friendly festive atmosphere.",
+            "Engagement Focus: Included dynamic call-outs (\"Share to Print\") and reward previews to encourage active fan participation and social sharing."
+          ],
         },
         {
           name: "Arena of Valor",
@@ -95,7 +114,12 @@ const App = {
             "images/aovYue/06.jpg",
           ],
           company: "Garena",
-          concept: "Modern & Futuristic",
+          concept: [
+            "Campaign Goal: Announce the new skin \"Yue: Crown of the Fallen\" by starting with a mysterious teaser and then showing full gameplay and skills.",
+            "Design Strategy: Used purple and gold colors, elegant fonts, and classical borders to show the character's mysterious, graceful, and dangerous vibe.",
+            "Visual Execution: Designed a mystery letter with a silhouette at first, followed by clear skill guides and pro-player gear tips.",
+            "Targeted Engagement: Added a bold, magazine-style banner to bring in different types of players and make the campaign more fun."
+          ],
         },
         {
           name: "Lost Ark",
@@ -105,7 +129,7 @@ const App = {
             "images/lostark/01.jpg",
           ],
           company: "Happytuk",
-          concept: "Modern & Futuristic",
+          // concept: ["Modern & Futuristic"],
         },
         // {
         //   name: "A.V.A",
@@ -123,8 +147,8 @@ const App = {
             "images/clothes/01.jpg",
             "images/clothes/02.jpg",
           ],
-          concept: "Modern & Futuristic",
-          company: "Fashion E-commerce",
+          // concept: ["Modern & Futuristic"],
+          // company: "Fashion E-commerce",
         },
       ],
       amzDesign: [
@@ -226,7 +250,7 @@ const App = {
             "images/gumayusi_pkg/06.jpg",
           ],
           company: "Corsair",
-          concept: "Modern & Futuristic",
+          // concept: ["Modern & Futuristic"],
         },
         // {
         //   name: "GALLEON 100 SD white",
@@ -243,7 +267,7 @@ const App = {
             "images/pkg/03.jpg",
           ],
           company: "Corsair",
-          concept: "Modern & Futuristic",
+          // concept: ["Modern & Futuristic"],
         },
       ],
       officialWebsites: [
@@ -260,7 +284,7 @@ const App = {
             "Vite",
           ],
           company: "Felicia Ho's studio",
-          concept: "Modern & Futuristic",
+          // concept: ["Modern & Futuristic"],
           webUrl: "https://feliciaho.github.io/bookingWeb/#/homeView",
           githubUrl: "https://github.com/feliciaho/bookingWeb",
           figmaUrl: "https://www.figma.com/design/IWVbELJiG1oS9CLWX8PUBx/Hotel-Booking-Web?node-id=0-1&p=f",
@@ -276,7 +300,7 @@ const App = {
           name: "Recipe Website",
           skill: ["HTML", "SASS", "Javascript", "RESTful API", "Vue", "Vite"],
           company: "Felicia Ho's studio",
-          concept: "Modern & Futuristic",
+          // concept: ["Modern & Futuristic"],
           webUrl: "https://feliciaho.github.io/recipeWeb_new/#/homeView",
           githubUrl: "https://github.com/feliciaho/recipeWeb_new",
           seeMore: true,
@@ -290,7 +314,7 @@ const App = {
         {
           name: "Cabel: Official Website",
           company: "Digeam",
-          concept: "Modern & Futuristic",
+          // concept: ["Modern & Futuristic"],
           skill: ["PhotoShop", "Illustrator", "HTML", "SASS", "Javascript"],
           webUrl: "https://cbo.digeam.com/index",
           seeMore: true,
@@ -304,7 +328,7 @@ const App = {
         {
           name: "Twinkle Star Kinights: Landing Page",
           company: "Aurer",
-          concept: "Modern & Futuristic",
+          // concept: ["Modern & Futuristic"],
           skill: ["PhotoShop", "Illustrator"],
           seeMore: false,
           github: false,

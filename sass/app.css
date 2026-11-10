@@ -167,7 +167,8 @@ body header .scrollDown div {
 body header .scrollDown div p {
   position: relative;
   font-size: 1.5rem;
-  background-clip: text;
+  -webkit-background-clip: text;
+          background-clip: text;
   animation: scrollAni 1s ease-out infinite;
   text-fill-color: transparent;
 }
@@ -358,7 +359,7 @@ section .projectConcept {
 }
 section .projectConcept h2.projectTitle {
   color: #ffc5e7;
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 400;
   display: flex;
   align-items: center;
@@ -369,11 +370,27 @@ section .projectConcept h2.projectTitle::after {
   width: 84px;
   border-top: 1px solid currentColor;
 }
-section .projectConcept p.projectTitle {
+section .projectConcept .conceptList {
   color: #ffffff;
   font-size: 20px;
   font-weight: 400;
-  line-height: 1.35;
+  font-family: "42dot Sans", sans-serif;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  text-align: left;
+  list-style: disc;
+  padding-left: 0.75em;
+}
+section .projectConcept .conceptList li + li {
+  margin-top: 0.35em;
+}
+@media only screen and (max-width: 767px) {
+  section .projectConcept h2.projectTitle {
+    font-size: 19px;
+  }
+  section .projectConcept .conceptList {
+    font-size: 16px;
+  }
 }
 section .projectInfo {
   display: flex;
@@ -393,21 +410,21 @@ section .projectInfo .projectInfoRow h2, section .projectInfo .projectInfoRow p 
   white-space: nowrap;
 }
 section .projectInfo .projectInfoRow h2 {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 400;
   text-align: left;
 }
 section .projectInfo .projectInfoRow p {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 400;
   text-align: right;
 }
 @media only screen and (max-width: 767px) {
   section .projectInfo .projectInfoRow h2 {
-    font-size: 16px;
+    font-size: 17px;
   }
   section .projectInfo .projectInfoRow p {
-    font-size: 18px;
+    font-size: 17px;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -429,22 +446,24 @@ section .seemoreWrap {
   display: flex;
   justify-content: flex-end;
 }
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 768px) {
   section.s5 .project {
     flex-direction: row;
+    -moz-column-gap: 3rem;
+         column-gap: 3rem;
   }
   section.s5 .project:nth-child(odd) {
     flex-direction: row;
   }
   section.s5 .project .secTextVisual {
     box-sizing: border-box;
-    width: 55%;
+    width: 45%;
   }
   section.s5 .project .bannerVisual {
     width: 45%;
   }
 }
-@media only screen and (max-width: 991px) {
+@media only screen and (max-width: 767px) {
   section.s5 .project {
     flex-direction: column;
   }
@@ -525,6 +544,7 @@ section.s2 .projectInfoRow p, section.s8 .projectInfoRow p, section.s9 .projectI
 }
 section.s2 .linkWrap {
   width: 100%;
+  margin-top: 1rem;
   justify-content: flex-end;
 }
 section.s2 .githubIcon, section.s2 .figmaIcon {
@@ -622,6 +642,7 @@ section .banner {
   overflow: hidden;
   width: 45%;
   z-index: 2;
+  height: -moz-fit-content;
   height: fit-content;
 }
 @media only screen and (max-width: 991px) {
@@ -636,7 +657,8 @@ section .banner a {
 }
 section .banner a img {
   transition: 0.2s linear;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   width: 100%;
 }
 section .banner .mask {
@@ -666,6 +688,7 @@ section .bannerUiux, section .bannerVisual {
   position: relative;
   overflow: hidden;
   z-index: 2;
+  height: -moz-fit-content;
   height: fit-content;
 }
 @media only screen and (max-width: 991px) {
@@ -983,6 +1006,4 @@ footer .footerImg {
     transform-origin: 50% 0%;
     transform: scaleY(0);
   }
-}
-
-/*# sourceMappingURL=app.css.map */
+}/*# sourceMappingURL=app.css.map */

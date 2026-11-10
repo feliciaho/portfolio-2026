@@ -37,7 +37,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=BBH+Bartle&family=BBH+Hegarty&family=Corinthia&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lora:ital,wght@0,400..700;1,400..700&family=Permanent+Marker&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Zen+Maru+Gothic:wght@900&family=Zhi+Mang+Xing&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=BBH+Bartle&family=BBH+Hegarty&family=Corinthia&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lora:ital,wght@0,400..700;1,400..700&family=42dot+Sans:wght@400;500;600&family=Permanent+Marker&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Zen+Maru+Gothic:wght@900&family=Zhi+Mang+Xing&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="sass/app.css">
   <link rel="stylesheet" href="https://use.typekit.net/yif6mwx.css">
@@ -104,7 +104,7 @@
               <a class="nav-link" @click.prevent="scrollToTop('#s9')">AMZ Enhanced Imagery</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" @click.prevent="scrollToTop('#s8')">Print & Package Design</a>
+              <a class="nav-link" @click.prevent="scrollToTop('#s8')">Package Design</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" @click.prevent="scrollToTop('#s2')">UIUX Design</a>
@@ -166,9 +166,11 @@
               <p>{{i.company}}</p>
             </div>
           </div>
-          <div class="projectConcept" v-if="i.concept">
+          <div class="projectConcept" v-if="i.concept && i.concept.length">
             <h2 class="projectTitle">Concept</h2>
-            <p class="projectTitle">{{i.concept}}</p>
+            <ul class="conceptList">
+              <li v-for="(conceptItem, conceptIndex) in i.concept" :key="conceptIndex">{{conceptItem}}</li>
+            </ul>
           </div>
         </div>
         <!-- banner -->
@@ -212,7 +214,7 @@
       </div>
     </section>
     <section class="s8" id="s8">
-      <h1 class="secTitle">Print & Package Design</h1>
+      <h1 class="secTitle">Package Design</h1>
       <div class="project" v-for="(i,key) in printDesign" :key="i">
         <!-- text -->
         <div class="secTextVisual">
@@ -226,9 +228,11 @@
               <p>{{i.company}}</p>
             </div>
           </div>
-          <div class="projectConcept" v-if="i.concept">
+          <div class="projectConcept" v-if="i.concept && i.concept.length">
             <h2 class="projectTitle">Concept</h2>
-            <p class="projectTitle">{{i.concept}}</p>
+            <ul class="conceptList">
+              <li v-for="(conceptItem, conceptIndex) in i.concept" :key="conceptIndex">{{conceptItem}}</li>
+            </ul>
           </div>
           <!-- icon -->
         </div>
@@ -269,9 +273,11 @@
               </div>
             </div>
           </div>
-          <div class="projectConcept" v-if="i.concept">
+          <div class="projectConcept" v-if="i.concept && i.concept.length">
             <h2 class="projectTitle">Concept</h2>
-            <p class="projectTitle">{{i.concept}}</p>
+            <ul class="conceptList">
+              <li v-for="(conceptItem, conceptIndex) in i.concept" :key="conceptIndex">{{conceptItem}}</li>
+            </ul>
           </div>
 
           <!-- icon -->
