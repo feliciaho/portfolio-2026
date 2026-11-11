@@ -129,7 +129,12 @@ const App = {
             "images/lostark/01.jpg",
           ],
           company: "Happytuk",
-          // concept: ["Modern & Futuristic"],
+          concept: [
+            "Campaign Goal: Announce new game characters or skin releases to keep fans engaged and excited.",
+            "Design Strategy: Customized the banner designs based on the unique style of each character or skin.",
+            "Visual Execution: Designed a camera-film style for the first banner to showcase multiple new outfits at once, a school uniform style for the second, and a high-tech sci-fi style to highlight the new character in the third.",
+            "Targeted Engagement: Tailored the visuals for each update to instantly capture fans' attention and match the theme of the new content."
+          ],
         },
         // {
         //   name: "A.V.A",
@@ -141,14 +146,31 @@ const App = {
         //   company: "Happytuk",
         //   concept: "Modern & Futuristic",
         // },
+        // {
+        //   name: "New Winter Collection Launch",
+        //   img: [
+        //     "images/clothes/01.jpg",
+        //     "images/clothes/02.jpg",
+        //   ],
+        //   // concept: ["Modern & Futuristic"],
+        //   // company: "Fashion E-commerce",
+        // },
+      ],
+      motionDesign: [
         {
-          name: "New Winter Collection Launch",
+          name: "Gumayusi LCD Gif",
           img: [
-            "images/clothes/01.jpg",
-            "images/clothes/02.jpg",
+            "images/gumayusi_gif/gumayusi_gif01.gif",
+            "images/gumayusi_gif/gumayusi_gif02.gif",
+            "images/gumayusi_gif/gumayusi_gif03.gif",
+            "images/gumayusi_gif/gumayusi_gif04.gif",
           ],
-          // concept: ["Modern & Futuristic"],
-          // company: "Fashion E-commerce",
+          company: "Corsair",
+          concept: [
+            "Campaign Goal: Boost keyboard sales and excite fans by offering exclusive, custom-animated pixel art GIFs on the LCD screen with every purchase.",
+            "Design Strategy: Designed a series of charming, retro-style pixel visuals featuring the renowned esports star Gumayusi to create a cute yet immersive gaming atmosphere.",
+            "Motion Execution: Created four diverse pixel-style animations, including his signature archery move as an in-game hero, an adorable scene of him playing games in his gaming room, and other themed concepts.",
+          ],
         },
       ],
       amzDesign: [
@@ -250,7 +272,12 @@ const App = {
             "images/gumayusi_pkg/06.jpg",
           ],
           company: "Corsair",
-          // concept: ["Modern & Futuristic"],
+          concept: [
+            "Campaign Goal: Design and package an exclusive gaming peripherals collaboration with esports star Gumayusi, delivering a high-value collector's item to fans.",
+            "Design Strategy: Adopted a signature black and gold aesthetic, transforming the main visual's shooting star into a dynamic bullet trail over a starry night sky to reflect his precision.",
+            "Visual Execution: Designed comprehensive packaging details including side panels featuring his career championship milestones and bio, a dedicated purple-themed box for the matching mouse-pad, and an exclusive gold-toned fan photo card complete with his autograph and a handwritten note.",
+            "Business Impact: Designed packaging, banners, and photo cards that supported a product launch generating over US$337K in revenue opportunities within just one month."
+          ],
         },
         // {
         //   name: "GALLEON 100 SD white",
@@ -267,7 +294,11 @@ const App = {
             "images/pkg/03.jpg",
           ],
           company: "Corsair",
-          // concept: ["Modern & Futuristic"],
+          concept: [
+            "Campaign Goal: Design an official, standard packaging box for the Sabre V3 Pro wireless gaming mouse, establishing a strong and recognizable retail presence.",
+            "Design Strategy: Adopted CORSAIR’s iconic signature yellow and black color scheme to maintain brand consistency and create maximum shelf impact.",
+            "Visual Execution: Placed clear feature icons directly on the front panel to instantly highlight key performance specs, including its ultralight 37g weight, high polling rate, and PureVector technology.",
+          ],
         },
       ],
       officialWebsites: [
@@ -284,7 +315,12 @@ const App = {
             "Vite",
           ],
           company: "Felicia Ho's studio",
-          // concept: ["Modern & Futuristic"],
+          concept: [
+            "Campaign Goal: Design and develop a comprehensive hostel booking website and admin dashboard to deliver a seamless reservation and management experience.",
+            "Design Strategy: Adopted a tropical resort visual style inspired by Bali, utilizing a rich palette of green tones and light hues to create an immersive, relaxing rainforest atmosphere.",
+            "Visual & Technical Execution: Streamlined the design-to-code workflow by combining Cursor with the latest MCP technology, reducing manual HTML/CSS coding costs, while building a robust frontend with Vue.js, Vite, and RESTful APIs for complete room browsing, date selection, and order submission flows.",
+            "Impact: Integrated GitHub CI/CD for automated deployment and version control, while delivering a fully functional admin backend to ensure efficient property and order management."
+          ],
           webUrl: "https://feliciaho.github.io/bookingWeb/#/homeView",
           githubUrl: "https://github.com/feliciaho/bookingWeb",
           figmaUrl: "https://www.figma.com/design/IWVbELJiG1oS9CLWX8PUBx/Hotel-Booking-Web?node-id=0-1&p=f",
@@ -300,7 +336,12 @@ const App = {
           name: "Recipe Website",
           skill: ["HTML", "SASS", "Javascript", "RESTful API", "Vue", "Vite"],
           company: "Felicia Ho's studio",
-          // concept: ["Modern & Futuristic"],
+          concept: [
+            "Campaign Goal: Design and develop a comprehensive recipe platform, featuring a user-friendly frontend recipe browser for food lovers.",
+            "Design Strategy: Adopted a resort-inspired tropical rainforest visual style, utilizing a vibrant orange color palette to stimulate appetite, combined with soft rounded corners to create a warm and cozy atmosphere.",
+            "Visual & Technical Execution: Built the frontend using Vue.js and Vite, integrating RESTful APIs to implement seamless recipe browsing, search, and bookmarking functions, while ensuring an efficient design-to-code workflow.",
+            "Project Impact: Integrated GitHub Actions CI/CD for automated deployment and version management, boosting development efficiency, platform stability, and overall user experience."
+          ],
           webUrl: "https://feliciaho.github.io/recipeWeb_new/#/homeView",
           githubUrl: "https://github.com/feliciaho/recipeWeb_new",
           seeMore: true,
@@ -314,7 +355,12 @@ const App = {
         {
           name: "Cabel: Official Website",
           company: "Digeam",
-          // concept: ["Modern & Futuristic"],
+          concept: [
+            "Campaign Goal: Designed key pages including the homepage, announcement page, download, and event pages to build a complete user journey and interface flow for the PC-only game.",
+            "Design Strategy: Collaborated closely with PMs and front-end engineers from initial drafts to final implementation, ensuring visual consistency and usability without the need for RWD due to timeline constraints.",
+            "Visual Execution: Adopted a retro fantasy style inspired by the game's universe, utilizing heavy silver and metallic textures to build an immersive atmosphere.",
+            "Impact: Successfully bridged design and front-end development, delivering a polished, high-fidelity gaming portal that matches the original game aesthetics."
+          ],
           skill: ["PhotoShop", "Illustrator", "HTML", "SASS", "Javascript"],
           webUrl: "https://cbo.digeam.com/index",
           seeMore: true,
@@ -328,7 +374,11 @@ const App = {
         {
           name: "Twinkle Star Kinights: Landing Page",
           company: "Aurer",
-          // concept: ["Modern & Futuristic"],
+          concept: [
+            "Campaign Goal: Design and develop a clean, engaging landing page (web version) to announce the launch of the new game and introduce its core gameplay.",
+            "Design Strategy: Adopted a bright Japanese aesthetic that strictly follows the game's brand guidelines, using a lively and cute visual approach with rounded typography and a dominant blue color palette.",
+            "Visual Execution: Built an immersive product presentation featuring a smooth game image carousel, creating a cheerful and welcoming atmosphere that highlights the game's unique charm to incoming players."
+          ],
           skill: ["PhotoShop", "Illustrator"],
           seeMore: false,
           github: false,
@@ -470,6 +520,27 @@ const App = {
           nextEl: element.querySelector(".swiper-button-next"),
           prevEl: element.querySelector(".swiper-button-prev"),
         },
+      });
+    });
+    document.querySelectorAll(".mySwiperMotion").forEach((element) => {
+      new Swiper(element, {
+        slidesPerView: 1,
+        spaceBetween: 16,
+        breakpoints: {
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 24,
+          },
+          900: {
+            slidesPerView: 4,
+            spaceBetween: 32,
+          },
+        },
+        pagination: {
+          el: element.querySelector(".swiper-pagination"),
+          clickable: true,
+        },
+        loop: false,
       });
     });
     document.querySelectorAll(".mySwiper2").forEach((element) => {

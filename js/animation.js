@@ -75,7 +75,7 @@ gsap.utils.toArray("#s2 .bannerImageFrame:first-child").forEach((frame) => {
   );
 });
 
-gsap.utils.toArray("#s9 .mySwiper2").forEach((swiperElement) => {
+gsap.utils.toArray("#s9 .mySwiper2, #motionDesign .mySwiperMotion").forEach((swiperElement) => {
   const getVisibleImages = () => {
     const swiperBounds = swiperElement.getBoundingClientRect();
     return gsap.utils

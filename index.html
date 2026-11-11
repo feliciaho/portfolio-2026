@@ -101,6 +101,9 @@
               <a class="nav-link" @click.prevent="scrollToTop('#s5')">Banner Design</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" @click.prevent="scrollToTop('#motionDesign')">Motion Design</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" @click.prevent="scrollToTop('#s9')">AMZ Enhanced Imagery</a>
             </li>
             <li class="nav-item">
@@ -186,6 +189,35 @@
             <div class="swiper-button-prev"></div>
             <div class="swiper-pagination"></div>
           </div>
+        </div>
+      </div>
+    </section>
+    <section class="s9" id="motionDesign">
+      <h1 class="secTitle">Motion Design</h1>
+      <div class="project-center" v-for="(i,key) in motionDesign" :key="i">
+        <div class="projectInfo">
+          <div class="projectInfoRow">
+            <h2 class="projectTitle">Project {{key+1}}</h2>
+            <p class="projectName">{{i.name}}</p>
+          </div>
+          <div class="projectInfoRow">
+            <h2 class="projectTitle">Company</h2>
+            <p>{{i.company}}</p>
+          </div>
+        </div>
+        <div class="projectConcept" v-if="i.concept && i.concept.length">
+          <h2 class="projectTitle">Concept</h2>
+          <ul class="conceptList">
+            <li v-for="(conceptItem, conceptIndex) in i.concept" :key="conceptIndex">{{conceptItem}}</li>
+          </ul>
+        </div>
+        <div class="swiper mySwiperMotion">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" v-for="(img, key) in i.img" :key="key">
+              <img :src="img" :alt="i.name + ' 動態設計作品 ' + (key+1)" />
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
         </div>
       </div>
     </section>
